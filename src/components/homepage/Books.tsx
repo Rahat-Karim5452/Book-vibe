@@ -21,7 +21,7 @@ const Books = async () => {
     <section className="max-w-7xl mx-auto">
       Books
       <div className="grid grid-cols-4 gap-3">
-        {booksData.map((book) => (
+        {booksData.slice(0, 5).map((book) => (
           <BookCard key={book.bookName} book={book} />
         ))}
       </div>

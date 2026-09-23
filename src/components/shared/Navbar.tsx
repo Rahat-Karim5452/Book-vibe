@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import Logo from "@/assets/book.ico";
+import Link from "next/link";
 const Navbar = () => {
   return (
     <nav className="bg-base-100 shadow-sm">
@@ -30,7 +31,7 @@ const Navbar = () => {
               className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
             >
               <li>
-                <a>Item 1</a>
+                <Link href="/books">Books</Link>
               </li>
               <li>
                 <a>Parent</a>
@@ -56,7 +57,7 @@ const Navbar = () => {
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
             <li>
-              <a>Item 1</a>
+              <Link href="/books">Books</Link>
             </li>
             <li>
               <details>

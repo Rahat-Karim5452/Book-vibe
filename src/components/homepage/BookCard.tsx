@@ -1,5 +1,6 @@
 import IBookType from "@/types/typs";
 import Image from "next/image";
+import Link from "next/link";
 
 const BookCard = ({ book }: { book: IBookType }) => {
   return (
@@ -33,11 +34,9 @@ const BookCard = ({ book }: { book: IBookType }) => {
         <h2 className="line-clamp-1 text-base font-bold text-gray-900 sm:text-lg">
           {book.bookName}
         </h2>
-
         <p className="mt-0.5 text-xs text-gray-500 sm:text-sm">
           by <span className="font-medium text-gray-700">{book.author}</span>
         </p>
-
         {/* Tags */}
         <div className="mt-2 flex flex-wrap gap-1.5">
           {book.tags.map((tag) => (
@@ -49,12 +48,10 @@ const BookCard = ({ book }: { book: IBookType }) => {
             </span>
           ))}
         </div>
-
         {/* Review */}
         <p className="mt-3 line-clamp-2 text-sm leading-5 text-gray-600">
           {book.review}
         </p>
-
         {/* Book Info */}
         <div className="mt-3 flex items-center justify-between border-t border-gray-100 pt-3 text-xs sm:text-sm">
           <div>
@@ -70,11 +67,12 @@ const BookCard = ({ book }: { book: IBookType }) => {
             </span>
           </div>
         </div>
-
         {/* Button - pinned to bottom via flex-1 above */}
-        <button className="mt-4 w-full rounded-xl bg-linear-to-r from-violet-600 to-indigo-600 py-2 text-sm font-semibold text-white transition hover:from-violet-700 hover:to-indigo-700 active:scale-[0.98]">
-          View Details →
-        </button>
+        <Link href={`/books/${book.bookId}`}>
+          <button className="mt-4 w-full rounded-xl bg-linear-to-r from-violet-600 to-indigo-600 py-2 text-sm font-semibold text-white transition hover:from-violet-700 hover:to-indigo-700 active:scale-[0.98]">
+            View Details →
+          </button>
+        </Link>
       </div>
     </div>
   );
