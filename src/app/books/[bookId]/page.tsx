@@ -9,14 +9,16 @@ interface IDetalisPorps {
   }>;
 }
 const getBooks = async (): Promise<IBookType[]> => {
-  const res = await fetch("http://localhost:3000/booksData.json");
-
-  if (!res.ok) {
-    throw new Error("Failed to fetch books");
+  try {
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_SERVER_BASE_URL}/booksData.json`,
+    );
+    const data = await res.json();
+    return data;
+  } catch (error) {
+    console.log("Error Fetching Data", error);
+    return [];
   }
-
-  const data = await res.json();
-  return data;
 };
 const BooksDeltailsPage = async ({ params }: IDetalisPorps) => {
   const { bookId } = await params;
