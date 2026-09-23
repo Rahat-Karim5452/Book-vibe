@@ -1,12 +1,12 @@
 import Image from "next/image";
-import React from "react";
+
 import bannerimage from "@/assets/hero_img.jpg";
 
 const Banner = () => {
   return (
     <section className="py-16 px-4 bg-white">
-      <div className="container mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center bg-gradient-to-br from-amber-50 via-orange-50 to-amber-100 rounded-[2.5rem] p-8 md:p-16 shadow-sm border border-amber-200/50">
+      <div className="max-w-7xl  mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center bg-linear-to-br from-amber-50 via-orange-50 to-amber-100 rounded-[2.5rem] p-8 md:p-16 shadow-sm border border-amber-200/50">
           {/* Text column */}
           <div className="flex flex-col gap-5 text-center md:text-left order-2 md:order-1">
             <span className="inline-flex items-center gap-2 self-center md:self-start text-xs font-semibold tracking-wider uppercase text-amber-800 bg-amber-200/60 px-3 py-1.5 rounded-full w-fit">
