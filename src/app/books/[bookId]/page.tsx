@@ -1,3 +1,5 @@
+import ReadButton from "@/components/bookDetails/ReadButton";
+import WishListButton from "@/components/bookDetails/WishListButton";
 import IBookType from "@/types/typs";
 import Image from "next/image";
 
@@ -97,7 +99,6 @@ const BooksDeltailsPage = async ({ params }: IDetalisPorps) => {
               <p className="text-xs text-base-content/50">Published</p>
               <p className="font-medium">{book.yearOfPublishing}</p>
             </div>
-
             <div>
               <p className="text-xs text-base-content/50">Publisher</p>
               <p className="font-medium truncate">{book.publisher}</p>
@@ -106,9 +107,8 @@ const BooksDeltailsPage = async ({ params }: IDetalisPorps) => {
 
           {/* Buttons */}
           <div className="flex justify-end gap-2 mt-4">
-            <button className="btn btn-outline btn-sm">Read</button>
-
-            <button className="btn btn-primary btn-sm">Wishlist</button>
+            <ReadButton book={book} />
+            <WishListButton book={book} />
           </div>
         </div>
       </div>
